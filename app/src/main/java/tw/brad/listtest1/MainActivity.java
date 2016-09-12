@@ -12,11 +12,14 @@ import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity {
     private ListView list;
-    private LinkedList<HashMap<String,String>> data;
-    private String[] from = {"title","content"};
-    private int[] to = {R.id.item_title, R.id.item_content};
+    private LinkedList<HashMap<String,Object>> data;
+    private String[] from = {"title","content","img"};
+    private int[] to = {R.id.item_title, R.id.item_content,
+    R.id.item_img};
     private SimpleAdapter adapter;
     private EditText inputTitle ;
+    private int[] p = {R.drawable.p1,R.drawable.p2,
+    R.drawable.pokemon};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +46,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void addItem(View v){
         String input = inputTitle.getText().toString();
-        HashMap<String,String> dd =
+        HashMap<String,Object> dd =
                 new HashMap<>();
         dd.put(from[0],input);
         dd.put(from[1], "data...");
+        dd.put(from[2],p[(int)(Math.random()*3)]);
         data.add(dd);
         adapter.notifyDataSetChanged();
     }
