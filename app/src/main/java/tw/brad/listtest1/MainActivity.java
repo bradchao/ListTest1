@@ -27,22 +27,25 @@ public class MainActivity extends AppCompatActivity {
                 = new LinkedList<>();
         HashMap<String,String> data0 =
                 new HashMap<>();
-        data0.put("brad","Brad");
+        data0.put("title","Brad");
+        data0.put("content","Brad.....1");
         data.add(data0);
 
         HashMap<String,String> data1 =
                 new HashMap<>();
-        data1.put("brad","Peter");
+        data1.put("title","周杰倫");
+        data1.put("content","Brad.....2");
         data.add(data1);
 
         HashMap<String,String> data2 =
                 new HashMap<>();
-        data2.put("brad","Tony");
+        data2.put("title","Little Sweet");
+        data2.put("content","Brad.....3");
         data.add(data2);
 
 
-        String[] from = {"brad"};
-        int[] to = {R.id.item_title};
+        String[] from = {"title","content"};
+        int[] to = {R.id.item_title, R.id.item_content};
         SimpleAdapter adapter =
                 new SimpleAdapter(
                         this,data,
